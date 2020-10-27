@@ -1,0 +1,21 @@
+<table class="content table mt-5">
+  <thead>
+    <tr>
+      <th scope="col">Queue Id</th>
+      <th scope="col">Category Name</th>
+      <th scope="col">Queue Weight</th>
+      <th scope="col">Person Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="empireQueues?.size() == 0">
+      <td>No data</td>
+    </tr>
+    <tr *ngFor="let empireQueue of this.empireQueues.getAll()">
+      <td>{{ empireQueue.id }}</td>
+      <td>{{ empireQueue.name }}</td>
+      <td>{{ empireQueue.queueWeight }}</td>
+      <td>{{ empireQueue.activeWaitersCount }}</td>
+    </tr>
+  </tbody>
+</table>

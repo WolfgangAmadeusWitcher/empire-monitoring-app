@@ -1,0 +1,23 @@
+<table class="content table mt-5">
+  <thead>
+    <tr>
+      <th scope="col">Terminal Id</th>
+      <th scope="col">Alias</th>
+      <th scope="col">Status</th>
+      <th scope="col">Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="terminals?.size() == 0">
+      <td>No data</td>
+    </tr>
+    <tr *ngFor="let terminal of this.terminals.getAll()">
+      <td>{{ terminal.id }}</td>
+      <td>{{ terminal.alias }}</td>
+      <td>{{ getStatusText(terminal.status) }} - <span class="fas fa-certificate"
+          [ngClass]="{'online-flash': terminal.status == 1, 'serving-flash': terminal.status == 2, 'onBreak-flash': terminal.status == 3, 'idle-flash': terminal.status ==4, 'offline-flash': terminal.status == 5}"></span>
+      </td>
+      <td>{{ activeBreakLogs.get(terminal.id)?.breakReason }}</td>
+    </tr>
+  </tbody>
+</table>

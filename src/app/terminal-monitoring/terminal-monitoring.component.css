@@ -1,0 +1,20 @@
+
+.online-flash{
+  color:green;
+}
+
+.serving-flash{
+  color: deepskyblue;
+}
+
+.onBreak-flash{
+  color:yellow;
+}
+
+.idle-flash{
+  color: magenta;
+}
+
+.offline-flash{
+  color:red;
+}
